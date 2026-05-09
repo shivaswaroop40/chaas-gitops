@@ -1,6 +1,6 @@
-# CHAAS GitOps Demo
+# Chas GitOps Demo
 
-A GitOps demonstration repository for **CHAAS Academy, Stockholm** — showcasing [Flux CD](https://fluxcd.io) on a live Kubernetes cluster running in [iximiuz Labs](https://labs.iximiuz.com).
+A GitOps demonstration repository for **Chas Academy, Stockholm** — showcasing [Flux CD](https://fluxcd.io) on a live Kubernetes cluster running in [iximiuz Labs](https://labs.iximiuz.com).
 
 ---
 
