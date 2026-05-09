@@ -1,0 +1,48 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: backend-api
+  namespace: flux-system
+spec:
+  image: nginx
+  interval: 5m
+
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: backend-api
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: backend-api
+  policy:
+    semver:
+      range: 1.25.x
+
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageUpdateAutomation
+metadata:
+  name: backend-api
+  namespace: flux-system
+spec:
+  interval: 5m
+  sourceRef:
+    kind: GitRepository
+    name: chaas-gitops
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: flux@chaas.io
+        name: Flux CD
+      messageTemplate: "[ci] bump backend-api to {{ .NewImage }}"
+    push:
+      branch: main
+  update:
+    strategy: Setters
+    path: ./apps/backend

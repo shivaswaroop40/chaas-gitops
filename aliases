@@ -1,0 +1,47 @@
+# Core
+alias k="kubectl"
+
+# Get resources
+alias kg="kubectl get"
+alias kgp="kubectl get pods"
+alias kgs="kubectl get svc"
+alias kgd="kubectl get deploy"
+alias kgn="kubectl get nodes"
+alias kgns="kubectl get ns"
+alias kga="kubectl get all"
+alias kgw="kubectl get pods -w"
+
+# Describe
+alias kd="kubectl describe"
+alias kdp="kubectl describe pod"
+alias kdd="kubectl describe deploy"
+
+# Logs
+alias kl="kubectl logs"
+alias klf="kubectl logs -f"
+
+# Exec / Shell
+alias kex="kubectl exec -it"
+
+# Port forward
+alias kpf="kubectl port-forward"
+
+# Context / Namespace
+alias kx="kubectx"
+alias kns="kubens"
+
+# Top / Metrics
+alias ktopns="kubectl top ns"
+alias ktopn="kubectl top node"
+
+# Flux
+alias fg="flux get"
+alias fga="flux get all"
+alias fgk="flux get kustomizations"
+alias fgs="flux get sources"
+alias fgi="flux get images"
+alias fr="flux reconcile"
+alias frk="flux reconcile kustomization"
+alias frs="flux reconcile source"
+alias fp="flux pause"
+alias frs2="flux resume"
